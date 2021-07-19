@@ -1,0 +1,378 @@
+<style>
+    :root {
+        --outer-border-color: #736957;
+        --cell-border-color: #675b4a;
+        --outer-background-color: #3e3428;
+        --cell-background-color: #4e4e49;
+        --font-color: #e6e623;
+        --black-color: #000000;
+    }
+    .outer-box {
+        width: 292px;
+        height: 398px;
+        padding: 0px 5px 5px 5px;
+        border: 7px solid var(--outer-border-color);
+        background-color: var(--outer-background-color);
+    }
+    .cell {
+        position: relative;
+        top: 5px;
+        left: 7px;
+        display: inline-block;
+        width: 88px;
+        height: 44px;
+        border: solid var(--cell-border-color);
+        background-color: var(--black-color);
+    }
+    #main {
+        position: relative;
+        overflow: hidden;
+        left: 2px;
+
+        height: 48px;
+        width: 92px;
+
+        margin: 2px;
+        background-color: var(--cell-background-color);
+    }
+    #main div {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        z-index: 100;
+
+        border: solid var(--cell-border-color);
+        border-radius: 46%; /* was 100 but the edges were too sharp */
+        background-color: var(--outer-background-color);
+    }
+    .neg-y-100 {
+        position: absolute;
+        top: 2px;
+        left: 8px;
+
+        height: 42px;
+        width: calc(100% + -16px);
+
+        border-bottom: solid var(--cell-border-color);
+        border-top: solid var(--cell-border-color);
+    }
+    .neg-x-100 {
+        position: absolute;
+        top: 8px;
+        left: 4px;
+        height: 36px;
+        width: calc(100% + -10px);
+        border-radius: 3px;
+        border-right: solid var(--cell-border-color);
+        border-left: solid var(--cell-border-color);
+    }
+    .top { top: -4px; }
+    .bottom { bottom: -4px; }
+    .left { left: -4px; }
+    .right { right: -4px; }
+    .mop {
+        margin: 2px;
+        height: 40px;
+        width: 85px;
+        display: inline-block;
+        align-self: start;
+        vertical-align: top;
+        padding-bottom: 5px;
+    }
+</style>
+
+
+<body onload="showContent()">
+<template>
+    <div class="mop">
+        <div style="position: absolute;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="mop">
+        <div style="position: absolute;height: 36px;">
+            <div id="main">
+                <div class="top left"></div>
+                <div class="top right"></div>
+                <div class="bottom left"></div>
+                <div class="bottom right"></div>
+            </div>
+            <div class="neg-y-100"></div>
+            <div class="neg-x-100"></div> 
+        </div>
+    </div>
+    <div class="cell"></div>
+</template>
+<section style="display: flex; flex-wrap: wrap;"> 
+    <div id="outer-box" class="outer-box">
+        <div id="inner-box" class="inner-box"></div>
+    </div>
+</section>
+</body>
+<script>
+    function showContent() {
+      var temp = document.getElementsByTagName("template")[0];
+      var outerBox = document.getElementById("inner-box");
+      var clon = temp.content.cloneNode(true);
+      outerBox.appendChild(clon);
+    }
+</script>
